@@ -43,7 +43,7 @@
   },
   {
     "label": "Electron",
-    "icon": "el-icon-electron",
+    "icon": "fd-icon fd-icon-electron",
     "children": [
       {
         "path": "/viewer#electron-cupture",
