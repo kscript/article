@@ -2,7 +2,7 @@
 Vue: [en](https://cn.vuejs.org) | [zh](https://cn.vuejs.org)  
 [Vue CLI 3](https://cli.vuejs.org/zh/)  
 [Vue技术内幕](http://hcysun.me/vue-design/art/)  
-[Element-ui](http://element-cn.eleme.io/#/zh-CN/component)
+[Element-ui](http://element-cn.eleme.io/#/zh-CN/component)  
 
 ##### React
 React: [en](https://reactjs.org/) | [zh](https://react.docschina.org/)  
@@ -18,12 +18,11 @@ react-native: [en](https://facebook.github.io/react-native/) | [zh](https://reac
 ##### 打包工具
 Webpack: [en](https://webpack.js.org/) | [zh](https://www.webpackjs.com/concepts/)  
 Glup: [en](https://gulpjs.com/) | [zh](https://www.gulpjs.com.cn/)  
-RequireJS: [en](https://requirejs.org/) | [zh](http://www.requirejs.cn)
+RequireJS: [en](https://requirejs.org/) | [zh](http://www.requirejs.cn)  
 
 ##### 问答社区
 [stackoverflow](https://stackoverflow.com/)  
 [思否](https://segmentfault.com/)  
-[div.io](https://div.io/)  
 [知乎](https://www.zhihu.com)  
 
 ##### 技术社区/博客
@@ -34,6 +33,7 @@ RequireJS: [en](https://requirejs.org/) | [zh](http://www.requirejs.cn)
 [开源中国](https://www.oschina.net/)  
 [前端乱炖](http://www.html-js.com/)  
 [WEB前端开发](https://www.css88.com/)  
+[div.io](https://div.io/)  
 
 [张鑫旭](https://www.zhangxinxu.com/)  
 [阮一峰](http://www.ruanyifeng.com/blog/)  
@@ -43,18 +43,22 @@ RequireJS: [en](https://requirejs.org/) | [zh](http://www.requirejs.cn)
 W3C: [en](https://www.w3.org/) | [zh](http://www.chinaw3c.org/)  
 MDN: [en](https://developer.mozilla.org) | [zh](https://developer.mozilla.org/zh-CN)  
 NodeJS: [en](https://nodejs.org/) | [zh](http://nodejs.cn/)  
-w3schools: [en](http://www.w3schools.com) | [zh](http://www.w3school.com.cn)
+w3schools: [en](http://www.w3schools.com) | [zh](http://www.w3school.com.cn)  
 TypeScript: [en](http://www.typescriptlang.org/) | [zh](https://www.tslang.cn/)  
 Redux: [en](https://redux.js.org/) | [zh](https://www.redux.org.cn/)  
 [菜鸟教程](http://www.runoob.com)  
 [腾讯云 - 开发者手册](https://cloud.tencent.com/developer/devdocs)  
 [前端开发者手册](https://dwqs.gitbooks.io/frontenddevhandbook)  
 
-##### 在线代码测试
+##### 在线代码演示
 [Codepen](https://codepen.io)  
 [Jsfiddle](https://jsfiddle.net/)  
 [Jsbin](https://jsbin.com/)  
 [Codesandbox](https://codesandbox.io)  
 
 ##### 注释工具
-jsdoc: [en](http://usejsdoc.org/) | [zh](https://www.css88.com/doc/jsdoc/)
+jsdoc: [en](http://usejsdoc.org/) | [zh](https://www.css88.com/doc/jsdoc/)  
+
+##### 测试工具
+[Jest](https://jestjs.io/zh-Hans/)  
+[Travis CI](https://travis-ci.org)

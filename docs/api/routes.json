@@ -42,6 +42,10 @@
       {
         "path": "/viewer#custom-events",
         "label": "quill自定义事件模块"
+      },
+      {
+        "path": "/viewer#front-end-glossary",
+        "label": "前端词汇"
       }
     ]
   },
