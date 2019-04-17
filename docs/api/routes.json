@@ -10,6 +10,10 @@
       {
         "path": "/viewer#nav",
         "label": "前端资源导航"
+      },
+      {
+        "path": "/viewer#star",
+        "label": "Star过的代码库"
       }
     ]
   },
