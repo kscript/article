@@ -742,157 +742,227 @@ vscode插件 从Git存储库快速浏览文件的历史记录
 Windows平台的API示例
 
 [ndm](https://github.com/npm/ndm)   
+直接使用npm包部署服务?
 
 [sack.vfs](https://github.com/d3x0r/sack.vfs)   
 
 [mapbox-gl-js](https://github.com/mapbox/mapbox-gl-js)   
+Mapbox GL JS是一个JavaScript库，用于Web上交互式、可自定义的矢量图。
 
 [chromedriver](https://github.com/electron/chromedriver)   
+用于下载 Electron 使用的 chromedriver
 
 [node-gui](https://github.com/yue/node-gui)   
-
+node 图形界面
 [yue](https://github.com/yue/yue)   
+一个创建跨平台gui应用的库
 
 [velocity](https://github.com/julianshapiro/velocity)   
+一个动画引擎
 
 [puppeteer](https://github.com/GoogleChrome/puppeteer)   
+nodejs 爬虫
 
 [fullPage.js](https://github.com/alvarotrigo/fullPage.js)   
+整页切换
 
 [git-tips](https://github.com/521xueweihan/git-tips)   
+Git的奇技淫巧
 
 [flv.js](https://github.com/bilibili/flv.js)   
+HTML5 flv 播放器
 
 [draggable](https://github.com/Shopify/draggable)   
+js拖动
 
 [Snap.svg](https://github.com/adobe-webplatform/Snap.svg)   
+一个操作svg的javascript库
 
 [nodemailer](https://github.com/nodemailer/nodemailer)   
+使用nodejs发送邮件
 
 [popper.js](https://github.com/FezVrasta/popper.js)   
+一个弹出层插件
 
 [fine-uploader](https://github.com/FineUploader/fine-uploader)   
+一个多文件上传/图片预览剪切
 
 [debug](https://github.com/visionmedia/debug)   
+一个测试工具, 使用nodecore开发
 
 [apidoc](https://github.com/apidoc/apidoc)   
+RESTful api文档生成器
 
 [workbox](https://github.com/GoogleChrome/workbox)   
+PWA JavaScript库
 
 [medis](https://github.com/luin/medis)   
+Redis Mac数据库管理应用。
 
 [emotion](https://github.com/emotion-js/emotion)   
+CSS-in-JS
 
 [markdown-it](https://github.com/markdown-it/markdown-it)   
+markdown 解析器
 
 [tween.js](https://github.com/tweenjs/tween.js)   
+一款可生成平滑动画效果的js动画库
 
 [Snap.js](https://github.com/jakiestfu/Snap.js)   
+Facebook风格侧边菜单效果
 
 [chroma.js](https://github.com/gka/chroma.js)   
+颜色操作库
 
 [nodeppt](https://github.com/ksky521/nodeppt)   
+web演示工具 node ppt
 
 [turn.js](https://github.com/blasten/turn.js)   
+html5 翻页效果
 
 [hls.js](https://github.com/video-dev/hls.js)   
+JavaScript HLS客户端
 
 [cropperjs](https://github.com/fengyuanchen/cropperjs)   
+图片裁剪
 
 [How-To-Ask-Questions-The-Smart-Way](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way)   
+如何提问
 
 [devtool](https://github.com/Jam3/devtool)   
+通过chromium devtools运行node.js程序
 
 [jsdiff](https://github.com/kpdecker/jsdiff)   
+文本差异比较
 
 [FileAPI](https://github.com/mailru/FileAPI)   
+一组用于处理文件的JavaScript工具。多重上传、拖放和分块文件上传。图像：按exif裁剪、调整大小和自动定位
 
 [github](https://github.com/github-tools/github)   
+对 github api 进行了一次包装
 
 [simpread](https://github.com/Kenshin/simpread)   
+一个阅读器应用
 
 [pwa](https://github.com/lukeed/pwa)   
+一个 pwa 脚手架
 
 [typescript-tutorial](https://github.com/xcatliu/typescript-tutorial)   
-
-[book-of-modern-frontend-tooling](https://github.com/tooling/book-of-modern-frontend-tooling)   
+TypeScript 入门教程
 
 [image-diff](https://github.com/uber-archive/image-diff)   
+图片差异比较
 
 [AlloyTouch](https://github.com/AlloyTeam/AlloyTouch)   
+触摸运动方案
 
 [2048-AI](https://github.com/ovolve/2048-AI)   
+一个简单的AI应用
 
 [console.image](https://github.com/adriancooney/console.image)   
+在控制台显示图片
 
 [shake.js](https://github.com/alexgibson/shake.js)   
+一个自定义的“震动”事件插件
 
 [distpicker](https://github.com/fengyuanchen/distpicker)   
+三级联动
 
 [js-stack-from-scratch](https://github.com/verekia/js-stack-from-scratch)   
+从零开始的JS学习栈
 
 [webpack.js.org](https://github.com/docschina/webpack.js.org)   
+webpack 中文文档
 
 [WebGLBook](https://github.com/tparisi/WebGLBook)   
+WebGL 案例
 
 [graphiql](https://github.com/graphql/graphiql)   
+一种api查询语言
 
 [awesome-python-cn](https://github.com/jobbole/awesome-python-cn)   
+Python资源大全
 
 [jsPDF](https://github.com/MrRio/jsPDF)   
 
 [reactjs101](https://github.com/kdchang/reactjs101)   
+从零开始学习 ReactJS
 
 [exploring-es6](https://github.com/es6-org/exploring-es6)   
+探索 ES6 中文版
 
 [mostly-adequate-guide-chinese](https://github.com/llh911001/mostly-adequate-guide-chinese)   
+JS 函数式编程指南中文版
 
 [hex](https://github.com/netease-youdao/hex)   
+使用html5和node.js构建桌面应用程序的解决方案
 
 [chromium](https://github.com/chromium/chromium)   
+chromium github 官方镜像
 
 [jslinux-deobfuscated](https://github.com/levskaya/jslinux-deobfuscated)   
+用js实现的一个linux系统
 
 [verlet-js](https://github.com/subprotocol/verlet-js)   
+一个用js写的物理引擎
 
 [julia](https://github.com/JuliaLang/julia)   
+一种新生代的编程语言
 
 [flutter-go](https://github.com/alibaba/flutter-go)   
+flutter demo 演示与中文文档
 
 [flutter](https://github.com/flutter/flutter)   
+一个移动UI框架，可以快速在iOS和Android上构建高质量的原生用户界面
 
 [es6tutorial](https://github.com/ruanyf/es6tutorial)   
+ECMAScript 6入门
 
 [Examples](https://github.com/plane000/Examples)   
+多语言代码示例供参考
 
 [cn.vuejs.org](https://github.com/vuejs/cn.vuejs.org)   
+vue中文文档
 
 [weekly](https://github.com/dt-fe/weekly)   
+前端精读周刊
 
 [danger-js](https://github.com/danger/danger-js)   
+在代码审查中发现危险的代码
 
 [unified](https://github.com/unifiedjs/unified)   
+语法数转换工具
 
 [TIL](https://github.com/xiaohesong/TIL)   
+一些学习资源
 
 [sweetalert2](https://github.com/sweetalert2/sweetalert2)   
+一个美化alert弹窗的插件
 
 [chameleon](https://github.com/didi/chameleon)   
+变色龙 一套代码运行多端
 
 [bootstrap-notify](https://github.com/mouse0270/bootstrap-notify)   
+bootstrap 通知插件
 
 [caniuse](https://github.com/Fyrd/caniuse)   
+兼容性
 
 [docs](https://github.com/webpack/docs)   
+webpack 文档
 
 [vue-markdown](https://github.com/miaolz123/vue-markdown)   
+vue 版的markdown 编辑预览组件
 
 [rollup](https://github.com/rollup/rollup)   
+在node里使用es6模块规范
 
 [thinscript](https://github.com/evanw/thinscript)   
+一种实验性的编程语言，可编译为javascript、WebAssembly和C
 
 [black-hole.js](https://github.com/cliffcrosland/black-hole.js)   
+使用WebGL制作的黑洞效果
 
 [vue-class-component](https://github.com/vuejs/vue-class-component)   
-
+带有ES / TypeScript 装饰器风格的Vue组件
  
