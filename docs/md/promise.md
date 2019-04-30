@@ -1,4 +1,4 @@
-<iframe src="./html/promise.html" style="width: 100%; height: 100px; border:0;"></iframe>
+<iframe src="/article/html/promise.html" style="width: 100%; height: 100px; border:0;"></iframe>
 
 promise: 
 ``` js
