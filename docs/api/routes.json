@@ -44,6 +44,10 @@
         "label": "文件加载器"
       },
       {
+        "path": "/viewer#promise",
+        "label": "promise"
+      },
+      {
         "path": "/viewer#custom-events",
         "label": "quill自定义事件模块"
       },
