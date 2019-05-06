@@ -45,6 +45,7 @@
                 return next(this);
             },
             then: function(onFulfilled, onRejected){
+                var self = this;
                 // 如果状态是pending, 将后面的then全部放入队列
                 if(this['[[PromiseStatus]]'] == 'pending'){
                     this.queue.push([this, arguments]);
@@ -75,7 +76,13 @@
                     }
                     // 如果返回值是 promise, 那么直接返回这个promise
                     if (this['[[PromiseValue]]'] instanceof Promise) {
-                        return this['[[PromiseValue]]'];
+                        return this['[[PromiseValue]]'].then(function(data){ 
+                            set(self, 'resolved', data);
+                            return data;
+                        }).catch(function(err) {
+                            set(self, 'rejected', err);
+                            return err;
+                        });
                     }
                 // 如果状态是rejectd 跳过, 直到遇到catch
                 } else if (this['[[PromiseStatus]]'] == 'rejectd') {

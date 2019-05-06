@@ -1,4 +1,77 @@
-<iframe src="/article/html/promise.html" style="width: 100%; height: 100px; border:0;"></iframe>
+<iframe src="./html/promise.html" style="width: 100%; height: 100px; border:0;"></iframe>
+
+测试代码 test1 & test2 : 
+``` js
+var app = {};
+function test1(){
+    app.test1 = new Promise(function(resolve, reject){
+        setTimeout(function(){
+            resolve(123);
+        }, 1000)
+    }).then(function(data){
+        console.log(data,1);
+        return 2;
+    }, function(error){
+        console.log(error,2);
+        return false;
+    }).then(function(data){
+        console.log(data,3);
+        return new Promise(function(resolve, reject){
+            setTimeout(function(){
+                resolve('new');
+            }, 3000)
+        }).then(function(data){
+            console.log('new then', data);
+            return 124;
+        })
+    }).catch(function(err){
+        console.log(err);
+    });
+    console.log(app.test1);
+}
+
+function test2() {
+    var end = false;
+    function test(type){
+        var res;
+        var timeid;
+        var timeids = [];
+        if (type === 0) {
+            var queue = [];
+            for (var i =1; i < 20; i++) {
+                (function(i){
+                    queue.push(new Promise((resolve, reject) => {
+                        timeids[i] = setInterval(function() {
+                            if (end) {
+                                clearInterval(timeids[i]);
+                                resolve(i*100);
+                            }
+                        }, 1000);
+                    }));
+                })(i);
+            }
+            return Promise.all(queue);
+        } else {
+            return new Promise((resolve, reject) => {
+                timeid = setInterval(function() {
+                    if (end) {
+                        clearInterval(timeid);
+                        resolve(0);
+                    }
+                }, 1000);
+            });
+        }
+    }
+    app.test2 = test(0);
+    setTimeout(() => {
+        end = true;
+        console.log(app.test2);
+    }, 3000);
+}
+document.querySelector("#test-1").addEventListener("click", test1);
+document.querySelector("#test-2").addEventListener("click", test2);
+console.log(app);
+```
 
 promise: 
 ``` js
@@ -32,6 +105,7 @@ promise:
             return next(this);
         },
         then: function(onFulfilled, onRejected){
+            var self = this;
             // 如果状态是pending, 将后面的then全部放入队列
             if(this['[[PromiseStatus]]'] == 'pending'){
                 this.queue.push([this, arguments]);
@@ -62,7 +136,13 @@ promise:
                 }
                 // 如果返回值是 promise, 那么直接返回这个promise
                 if (this['[[PromiseValue]]'] instanceof Promise) {
-                    return this['[[PromiseValue]]'];
+                    return this['[[PromiseValue]]'].then(function(data){ 
+                        set(self, 'resolved', data);
+                        return data;
+                    }).catch(function(err) {
+                        set(self, 'rejected', err);
+                        return err;
+                    });
                 }
             // 如果状态是rejectd 跳过, 直到遇到catch
             } else if (this['[[PromiseStatus]]'] == 'rejectd') {
@@ -130,76 +210,3 @@ promise:
     window.Promise = Promise;
 })();
 ```
-
-test: 
-``` js
-var app = {};
-function test1(){
-    app.test1 = new Promise(function(resolve, reject){
-        setTimeout(function(){
-            resolve(123);
-        }, 1000)
-    }).then(function(data){
-        console.log(data,1);
-        return 2;
-    }, function(error){
-        console.log(error,2);
-        return false;
-    }).then(function(data){
-        console.log(data,3);
-        return new Promise(function(resolve, reject){
-            setTimeout(function(){
-                resolve('new');
-            }, 3000)
-        }).then(function(data){
-            console.log('new then', data);
-            return 124;
-        })
-    }).catch(function(err){
-        console.log(err);
-    });
-    console.log(app.test1);
-}
-function test2() {
-    var end = false;
-    function test(type){
-        var res;
-        var timeid;
-        var timeids = [];
-        if (type === 0) {
-            var queue = [];
-            for (var i =1; i < 20; i++) {
-                (function(i){
-                    queue.push(new Promise((resolve, reject) => {
-                        timeids[i] = setInterval(function() {
-                            if (end) {
-                                clearInterval(timeids[i]);
-                                resolve(i*100);
-                            }
-                        }, 1000);
-                    }));
-                })(i);
-            }
-            return Promise.all(queue);
-        } else {
-            return new Promise((resolve, reject) => {
-                timeid = setInterval(function() {
-                    if (end) {
-                        clearInterval(timeid);
-                        resolve(0);
-                    }
-                }, 1000);
-            });
-        }
-    }
-    app.test2 = test(0);
-    setTimeout(() => {
-        end = true;
-        console.log(app.test2);
-    }, 3000);
-}
-document.querySelector("#test-1").addEventListener("click", test1);
-document.querySelector("#test-2").addEventListener("click", test2);
-console.log(app);
-```
-
