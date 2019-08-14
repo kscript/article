@@ -24,6 +24,10 @@
       {
         "path": "/sprite",
         "label": "精灵图片生成器"
+      },
+      {
+        "path": "/css-layout",
+        "label": "垂直居中布局"
       }
     ]
   },
@@ -61,6 +65,10 @@
     "label": "Electron",
     "icon": "fd-icon fd-icon-electron",
     "children": [
+      {
+        "path": "/viewer#electron-quick-start",
+        "label": "electron 入门"
+      },
       {
         "path": "/viewer#electron-cupture",
         "label": "electron 截屏"
