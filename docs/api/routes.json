@@ -26,7 +26,7 @@
         "label": "精灵图片生成器"
       },
       {
-        "path": "/css-layout",
+        "path": "/viewer#css-layout",
         "label": "垂直居中布局"
       }
     ]

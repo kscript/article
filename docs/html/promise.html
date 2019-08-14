@@ -11,11 +11,129 @@
     <p>
         <small>请打开控制台查看</small>
     </p>
+    <label>
+        <input type="radio" name="type" id="" value="0" checked>
+        原生Promise
+    </label>
+    <label>
+        <input type="radio" name="type" id="" value="1">
+        模拟Promise
+    </label>
     <button id="test-1">测试1</button>
     <button id="test-2">测试2</button>
 </div>
 <script>
-    (function() {
+    let queue = []
+    let state = 'PENDING'
+    let value = undefined
+    const next = () => {
+
+        if (state === 'PENDING') {
+            return
+        }
+        
+        let output
+        while (queue.length) {
+            let current = queue.shift()
+            let promise = current.promise
+            let func = state === 'FULFILLED' ? current.resolved : current.rejectd
+            if (typeof func !== 'function') {
+                func = state === 'FULFILLED' ? promise.resolve : promise.reject
+                typeof func === 'function' && func(value)
+                continue
+            }
+            try {
+                output = func(value)
+                if (output === promise) throw new TypeError("type error")
+            } catch (err) {
+                promise.reject(err)
+                continue
+            }
+            if (output && typeof output.then === 'function') {
+                output.then(promise.resolve, promise.reject)
+            } else {
+                typeof promise.resolve === 'function' && promise.resolve(output)
+            }
+        }
+    }
+    const set = function (status, data) {
+        // console.log(state, status, data)
+        if (state == 'FULFILLED' && (status == 'PENDING' || status == 'REJECTED')) {
+            return new Error("can't transition from current state: " + state);
+        }
+
+        if (state == 'REJECTED' && (status == 'PENDING' || status == 'FULFILLED')) {
+            return new Error("can't transition from current state: " + state);
+        }
+
+        if (status == 'FULFILLED' && arguments.length < 2) {
+            return new Error("transition to fulfilled must have a non null value");
+        }
+
+        if (status == 'REJECTED' && arguments.length < 2) {
+            return new Error("transition to rejected must have a non null reason");
+        }
+        state = status
+        value = data
+        setTimeout(next)
+        // console.log(1000)
+        return state
+    }
+
+    class Promise {
+        constructor (executor) {
+            set('PENDING', undefined)
+            if (typeof executor !== 'function') {
+                return this;
+            }
+            try {
+                return executor(
+                    (value) => {
+                        this.resolve(value)
+                    },
+                    (err) => {
+                        this.reject(err)
+                    }
+                )
+            } catch (err) {
+                this.reject(err)
+            }
+            return this
+        }
+        resolve (value) {
+            set('FULFILLED', value)
+            return this
+        }
+        reject (err) {
+            set('REJECTED', err)
+            return this
+        }
+        then (resolved, rejectd) {
+            let promise = new Promise()
+            queue.push({
+                promise,
+                resolved,
+                rejectd
+            })
+            return promise
+        }
+        catch (err) {
+            return this
+        }
+    }
+    Promise.resolve = (value) => {
+        return new Promise((resolve) => {
+            resolve(value)
+        })
+    }
+    Promise.reject = (err) => {
+        return new Promise((resolve, reject) => {
+            reject(err)
+        })
+    }
+</script>
+<script>
+    var myPromise = (function() {
         function Promise(executor){
             var self = this;
             set(self, 'pending');
@@ -32,7 +150,6 @@
             }
             return this;
         }
-        
         Promise.prototype = {
             constructor: Promise,
             queue: [],
@@ -147,14 +264,12 @@
             }
             return promise;
         }
-        window.Promise = Promise;
-    })();
-
+        return Promise;
+    })()
 </script>
 <script>
-    var app = {};
-    function test1(){
-        app.test1 = new Promise(function(resolve, reject){
+    function test1(Promise){
+        return new Promise(function(resolve, reject){
             setTimeout(function(){
                 resolve(123);
             }, 1000)
@@ -177,9 +292,8 @@
         }).catch(function(err){
             console.log(err);
         });
-        console.log(app.test1);
     }
-    function test2() {
+    function test2(Promise) {
         var end = false;
         function test(type){
             var res;
@@ -211,15 +325,34 @@
                 });
             }
         }
-        app.test2 = test(0);
         setTimeout(() => {
             end = true;
-            console.log(app.test2);
         }, 3000);
+        var res = test(0);
+        console.log(res);
+        return res;
     }
-    document.querySelector("#test-1").addEventListener("click", test1);
-    document.querySelector("#test-2").addEventListener("click", test2);
-    console.log(app);
+    function getPromise(){
+        var type = document.querySelector('[name="type"]:checked').value;
+        var result = Promise
+        if (type == 1) {
+            result = myPromise;
+        }
+        console.log('当前测试使用', result);
+        return result
+    }
+    document.querySelector("#test-1").addEventListener("click", function(){
+        var result = getPromise();
+        test1(result);
+    });
+    document.querySelector("#test-2").addEventListener("click", function(){
+        var result = getPromise();
+        test2(result);
+    });
+</script>
+
+<script>
+    
 </script>
 </body>
 </html>
