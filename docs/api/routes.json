@@ -58,6 +58,10 @@
       {
         "path": "/viewer#front-end-glossary",
         "label": "前端词汇"
+      },
+      {
+        "path": "/viewer#图片上传前预览",
+        "label": "图片上传前预览"
       }
     ]
   },
