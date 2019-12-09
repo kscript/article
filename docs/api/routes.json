@@ -28,6 +28,10 @@
       {
         "path": "/viewer#css-layout",
         "label": "垂直居中布局"
+      },
+      {
+        "path": "/viewer#css-view-all",
+        "label": "多行文本添加查看全部"
       }
     ]
   },
